@@ -2,7 +2,7 @@ pipeline {
     agent {
         docker {
             image 'maven:3.9.9-eclipse-temurin-17'
-            // Map Windows workspace to Linux-style path
+            // Mount Windows workspace correctly for Docker (Linux container)
             args '-v /c/ProgramData/Jenkins/.jenkins/workspace:/workspace -w /workspace/jenkins'
         }
     }
