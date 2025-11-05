@@ -6,7 +6,7 @@ pipeline {
         }
     }
     environment {
-        WORKDIR = '/workspace/jenkins'
+        WORKSPACE_DIR = '/workspace/jenkins'
     }
     stages {
         stage('Checkout') {
@@ -15,21 +15,21 @@ pipeline {
                 git branch: 'master', url: 'https://github.com/Sumeet-khandale/Jenkins-Test.git'
             }
         }
+
         stage('Build') {
             steps {
-                echo 'Building project...'
+                echo "Building in ${WORKSPACE_DIR}"
                 sh 'mvn clean package -DskipTests'
             }
         }
-        stage('Post-Build') {
-            steps {
-                echo '✅ Build successful — artifact ready in target/*.jar'
-            }
-        }
     }
+
     post {
+        success {
+            echo '✅ Build Successful!'
+        }
         failure {
-            echo '❌ Build failed — check logs above.'
+            echo '❌ Build Failed — check logs above.'
         }
     }
 }
