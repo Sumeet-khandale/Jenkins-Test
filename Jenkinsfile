@@ -1,8 +1,9 @@
 pipeline {
     agent {
         docker {
-            image 'maven:3.8.7-openjdk-17'   // Maven + JDK 17 image
-            args '-v /root/.m2:/root/.m2'   // Cache Maven dependencies between builds
+            // ✅ Use a valid Maven + Java 17 image
+            image 'maven:3.9.9-eclipse-temurin-17'
+            args '-v /root/.m2:/root/.m2' // Cache Maven dependencies
         }
     }
 
