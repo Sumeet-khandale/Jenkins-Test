@@ -2,23 +2,26 @@ pipeline {
     agent {
         docker {
             image 'maven:3.9.9-eclipse-temurin-17'
-            args '-v /c/ProgramData/Jenkins/.jenkins/workspace:/workspace'
+            // Map Windows workspace to Linux-style path
+            args '-v /c/ProgramData/Jenkins/.jenkins/workspace:/workspace -w /workspace/jenkins'
         }
     }
+
     environment {
         WORKSPACE_DIR = '/workspace/jenkins'
     }
+
     stages {
         stage('Checkout') {
             steps {
-                echo 'Cloning repository...'
+                echo '📦 Cloning repository...'
                 git branch: 'master', url: 'https://github.com/Sumeet-khandale/Jenkins-Test.git'
             }
         }
 
         stage('Build') {
             steps {
-                echo "Building in ${WORKSPACE_DIR}"
+                echo "⚙️ Building project inside Docker container at ${WORKSPACE_DIR}"
                 sh 'mvn clean package -DskipTests'
             }
         }
