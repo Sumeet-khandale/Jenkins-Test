@@ -18,9 +18,14 @@ SSH (TCP 22) → Your IP
 Custom TCP 8080 → For Jenkins UI
 Connect to your instance:
 
+## 🖥️ Step 1: EC2 Instance Details
+![EC2 Instance](https://raw.githubusercontent.com/Sumeet-khandale/Microservices-mini-project/main/1.png)
+
 ```bash
 ssh -i my-key.pem ubuntu@<EC2-Public-IP>
 ````
+## 💻 Step 2: SSH Connection
+![SSH Connection](https://raw.githubusercontent.com/Sumeet-khandale/Microservices-mini-project/main/2.png)
 
 ---
 
