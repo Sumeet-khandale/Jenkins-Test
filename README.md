@@ -1,29 +1,28 @@
 
----
+🚀 Jenkins + Docker Setup on AWS EC2
+By Sumeet Khandale
 
-````markdown
-# 🚀 Jenkins + Docker Setup on AWS EC2
+This guide helps you set up Jenkins on AWS EC2 (Ubuntu 22.04) and integrate it with Docker — all steps are copy-paste ready 💪
 
-*By Sumeet Khandale*
-
-This guide helps you set up **Jenkins on AWS EC2 (Ubuntu 22.04)** and integrate it with **Docker** — all steps are copy-paste ready 💪
-
----
-
-## 🧩 Step 1: Launch EC2
-
+🧩 Step 1: Launch EC2
 (If you don’t have an AWS account, create one first)
 
-### What to do
+What to do
+In AWS Console → EC2 → Launch Instance
 
-1. In **AWS Console → EC2 → Launch Instance**
-2. Choose **Ubuntu 22.04 LTS**
-3. **Instance type:** `t2.medium` (recommended for Jenkins + Docker)
-4. **Create or Select** a Key Pair
-5. Under **Security Group**, allow the following rules:
-   - **SSH (TCP 22)** → Your IP
-   - **Custom TCP 8080** → For Jenkins UI
-6. Connect to your instance:
+Choose Ubuntu 22.04 LTS
+
+Instance type: t2.medium (recommended for Jenkins + Docker)
+
+Create or Select a Key Pair
+
+Under Security Group, allow the following rules:
+
+SSH (TCP 22) → Your IP
+
+Custom TCP 8080 → For Jenkins UI
+
+Connect to your instance:
 
 ```bash
 ssh -i my-key.pem ubuntu@<EC2-Public-IP>
