@@ -21,6 +21,7 @@ Connect to your instance:
 ## 🖥️ Step 1: EC2 Instance Details
 ![EC2 Instance](https://raw.githubusercontent.com/Sumeet-khandale/Microservices-mini-project/main/1.png)
 
+## SSh by using .pem (for Linux/Mac/AWS/CLI) and .ppk (PuTTY Private Key (for Windows PuTTY))
 ```bash
 ssh -i my-key.pem ubuntu@<EC2-Public-IP>
 ````
@@ -77,6 +78,9 @@ Now open Jenkins in your browser:
 http://<EC2-Public-IP>:8080
 ```
 
+## 🔐 Step 4: Unlock Jenkins
+![Unlock Jenkins](https://raw.githubusercontent.com/Sumeet-khandale/Microservices-mini-project/main/4.png)
+
 To unlock Jenkins, run:
 
 ```bash
@@ -88,8 +92,20 @@ Copy the password from the terminal → paste it into the browser → click **Co
 Then:
 
 * Choose **Install suggested plugins**
+
+## ⚙️ Step 5: Customize Jenkins
+![Customize Jenkins](https://raw.githubusercontent.com/Sumeet-khandale/Microservices-mini-project/main/5.png)
+
 * Wait for installation to complete
+
+## 🔌 Step 6: Jenkins Plugins Installing
+![Plugins Installing](https://raw.githubusercontent.com/Sumeet-khandale/Microservices-mini-project/main/6.png)
+
 * Create your first admin user (or Skip)
+
+## 👤 Step 7: Create New Admin User
+![Create Admin User](https://raw.githubusercontent.com/Sumeet-khandale/Microservices-mini-project/main/7.png)
+
 * Click **Start using Jenkins**
 
 ✅ Jenkins is now installed and running.
@@ -132,6 +148,9 @@ In the Jenkins UI:
 2. Search for **Docker Pipeline**
 3. Install it and restart Jenkins
 
+## ⚙️ Step 8: Manage Jenkins & Plugin Configuration
+![Manage Jenkins Plugins](https://raw.githubusercontent.com/Sumeet-khandale/Microservices-mini-project/main/8.png)
+
 🧠 The plugin lets Jenkins run build stages inside Docker containers — ideal for CI/CD pipelines.
 
 ---
@@ -163,6 +182,9 @@ Run the pipeline.
 * Pull the Maven Docker image
 * Run the build steps inside the container
 * Print "Build Successful 🎉"
+
+## ✅ Step 9: Build Successful
+![Build Successful](https://raw.githubusercontent.com/Sumeet-khandale/Microservices-mini-project/main/9.png)
 
 🧠 This confirms that Jenkins + Docker integration works properly.
 
