@@ -1,11 +1,11 @@
 
-🚀 Jenkins + Docker Setup on AWS EC2
+ Jenkins + Docker Setup on AWS EC2
 By Sumeet Khandale
 
 This guide helps you set up Jenkins on AWS EC2 (Ubuntu 22.04) and integrate it with Docker 
 
 
-🧩 Step 1: Launch EC2
+ Step 1: Launch EC2
 (If you don’t have an AWS account, create one first)
 
 What to do
@@ -25,12 +25,12 @@ Connect to your instance:
 ```bash
 ssh -i my-key.pem ubuntu@<EC2-Public-IP>
 ````
-## 💻 Step 2: SSH Connection
+##  Step 2: SSH Connection
 ![SSH Connection](https://raw.githubusercontent.com/Sumeet-khandale/Microservices-mini-project/main/2.png)
 
 ---
 
-## ⚙️ Step 2: Install Java & Jenkins
+##  Step 2: Install Java & Jenkins
 
 Continue in your **EC2 terminal** and run:
 
@@ -60,7 +60,7 @@ sudo systemctl enable --now jenkins
 
 ---
 
-## 🔒 Step 3: Open Port 8080 for Jenkins
+##  Step 3: Open Port 8080 for Jenkins
 
 1. Go to **EC2 → Instances** in the AWS Console
 2. Select your **running instance**
@@ -78,7 +78,7 @@ Now open Jenkins in your browser:
 http://<EC2-Public-IP>:8080
 ```
 
-## 🔐 Step 4: Unlock Jenkins
+##  Step 4: Unlock Jenkins
 ![Unlock Jenkins](https://raw.githubusercontent.com/Sumeet-khandale/Microservices-mini-project/main/4.png)
 
 To unlock Jenkins, run:
@@ -93,26 +93,26 @@ Then:
 
 * Choose **Install suggested plugins**
 
-## ⚙️ Step 5: Customize Jenkins
+##  Step 5: Customize Jenkins
 ![Customize Jenkins](https://raw.githubusercontent.com/Sumeet-khandale/Microservices-mini-project/main/5.png)
 
 * Wait for installation to complete
 
-## 🔌 Step 6: Jenkins Plugins Installing
+##  Step 6: Jenkins Plugins Installing
 ![Plugins Installing](https://raw.githubusercontent.com/Sumeet-khandale/Microservices-mini-project/main/6.png)
 
 * Create your first admin user (or Skip)
 
-## 👤 Step 7: Create New Admin User
+##  Step 7: Create New Admin User
 ![Create Admin User](https://raw.githubusercontent.com/Sumeet-khandale/Microservices-mini-project/main/7.png)
 
 * Click **Start using Jenkins**
 
-✅ Jenkins is now installed and running.
+ Jenkins is now installed and running.
 
 ---
 
-## 🐳 Step 4: Install Docker & Configure Jenkins
+##  Step 4: Install Docker & Configure Jenkins
 
 Run these commands:
 
@@ -124,7 +124,7 @@ sudo systemctl enable --now docker
 sudo systemctl restart jenkins
 ```
 
-### 🧠 Explanation
+###  Explanation
 
 * Installs Docker to build images and run containers
 * Adds `jenkins` and `ubuntu` to the Docker group
@@ -136,11 +136,11 @@ sudo systemctl restart jenkins
 docker run hello-world
 ```
 
-✅ If you see “Hello from Docker!”, installation is successful.
+ If you see “Hello from Docker!”, installation is successful.
 
 ---
 
-## 🔌 Step 5: Install Docker Plugin in Jenkins
+##  Step 5: Install Docker Plugin in Jenkins
 
 In the Jenkins UI:
 
@@ -148,14 +148,14 @@ In the Jenkins UI:
 2. Search for **Docker Pipeline**
 3. Install it and restart Jenkins
 
-## ⚙️ Step 8: Manage Jenkins & Plugin Configuration
+##  Step 8: Manage Jenkins & Plugin Configuration
 ![Manage Jenkins Plugins](https://raw.githubusercontent.com/Sumeet-khandale/Microservices-mini-project/main/8.png)
 
-🧠 The plugin lets Jenkins run build stages inside Docker containers — ideal for CI/CD pipelines.
+ The plugin lets Jenkins run build stages inside Docker containers — ideal for CI/CD pipelines.
 
 ---
 
-## 🧱 Step 6: Test a Docker Pipeline
+##  Step 6: Test a Docker Pipeline
 
 Create a new **Pipeline Job** in Jenkins → Add this Jenkinsfile:
 
@@ -168,7 +168,7 @@ pipeline {
     stage('Build') {
       steps {
         sh 'mvn -v'
-        sh 'echo "Build Successful 🎉"'
+        sh 'echo "Build Successful "'
       }
     }
   }
@@ -177,35 +177,34 @@ pipeline {
 
 Run the pipeline.
 
-✅ Jenkins will:
+ Jenkins will:
 
 * Pull the Maven Docker image
 * Run the build steps inside the container
-* Print "Build Successful 🎉"
+* Print "Build Successful "
 
-## ✅ Step 9: Build Successful
+##  Step 9: Build Successful
 ![Build Successful](https://raw.githubusercontent.com/Sumeet-khandale/Microservices-mini-project/main/9.png)
 
-🧠 This confirms that Jenkins + Docker integration works properly.
+ This confirms that Jenkins + Docker integration works properly.
 
 ---
 
-## 🧾 Summary
+##  Summary
 
 | Component      | Status                   |
 | -------------- | ------------------------ |
-| EC2 Instance   | ✅ Launched               |
-| Java & Jenkins | ✅ Installed              |
-| Port 8080      | ✅ Open                   |
-| Docker         | ✅ Installed & Configured |
-| Docker Plugin  | ✅ Added                  |
-| Pipeline       | ✅ Tested Successfully    |
+| EC2 Instance   |  Launched               |
+| Java & Jenkins |  Installed              |
+| Port 8080      |  Open                   |
+| Docker         |  Installed & Configured |
+| Docker Plugin  |  Added                  |
+| Pipeline       |  Tested Successfully    |
 
 ---
 
-🎉 **Congratulations — Your Jenkins + Docker Setup is Complete!**
-You can now start building CI/CD pipelines for your projects 🚀
+ **Congratulations — Your Jenkins + Docker Setup is Complete!**
+You can now start building CI/CD pipelines for your projects 
 
 
 ---
-
