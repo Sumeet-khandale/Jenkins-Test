@@ -21,7 +21,7 @@ Connect to your instance:
 ## 🖥️ Step 1: EC2 Instance Details
 ![EC2 Instance](https://raw.githubusercontent.com/Sumeet-khandale/Microservices-mini-project/main/1.png)
 
-## SSh by using .pem (for Linux/Mac/AWS/CLI) and .ppk (PuTTY Private Key (for Windows PuTTY))
+## SSh by using .pem (for Linux/Mac/AWS/CLI) or .ppk (PuTTY Private Key (for Windows PuTTY))
 ```bash
 ssh -i my-key.pem ubuntu@<EC2-Public-IP>
 ````
@@ -206,11 +206,6 @@ Run the pipeline.
 🎉 **Congratulations — Your Jenkins + Docker Setup is Complete!**
 You can now start building CI/CD pipelines for your projects 🚀
 
----
-
-
-
-```
 
 ---
 
