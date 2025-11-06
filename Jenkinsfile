@@ -1,22 +1,20 @@
 pipeline {
-    agent none
+    agent any
 
     stages {
         stage('Build in Docker') {
-            agent {
-                docker {
-                    image 'maven:3.9.9-eclipse-temurin-17'
-                    // Mount Jenkins workspace manually with correct Linux path
-                    args '-v /c/ProgramData/Jenkins/.jenkins/workspace/jenkins:/workspace -w /workspace'
-                    reuseNode true
-                }
-            }
             steps {
                 echo '📦 Cloning repository...'
                 git branch: 'master', url: 'https://github.com/Sumeet-khandale/Jenkins-Test.git'
 
                 echo '⚙️ Building project inside Docker container...'
-                sh 'mvn clean package -DskipTests'
+                bat '''
+                docker run --rm ^
+                    -v "%cd%:/workspace" ^
+                    -w /workspace ^
+                    maven:3.9.9-eclipse-temurin-17 ^
+                    mvn clean package -DskipTests
+                '''
             }
         }
     }
