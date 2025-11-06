@@ -1,3 +1,5 @@
+---
+
 ````markdown
 # 🚀 Jenkins + Docker Setup on AWS EC2  
 *By Sumeet Khandale*  
@@ -189,5 +191,9 @@ Run the pipeline. Jenkins will:
 ### 🎉 Congratulations — Jenkins + Docker setup is complete!
 
 Now you can start building CI/CD pipelines for your projects 🚀
+
+```
+
+---
 
 ```
